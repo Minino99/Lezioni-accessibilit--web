@@ -1,53 +1,53 @@
 <!DOCTYPE html>
 <html lang="it">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Modulo di contatto</title>
-</head>
-<body>
-  <header>
-    <h1>Contattaci</h1>
-    <p>Compila il modulo sottostante per inviarci un messaggio.</p>
-  </header>
-  <main>
-    <form action="#" method="post">
-      <!-- Nome -->
-      <div>
-        <label for="name">Nome:</label>
-        <input type="text" id="name" name="name" required />
-      </div>
-      <!-- Email -->
-      <div>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required />
-      </div>
-      <!-- Oggetto (select) -->
-      <div>
-        <label for="subject">Oggetto:</label>
-        <select id="subject" name="subject" required >
-          <option value="" disabled selected>Seleziona un'opzione</option>
-          <option value="informazioni">Richiesta di informazioni</option>
-          <option value="supporto">Supporto tecnico</option>
-          <option value="feedback">Feedback</option>
-          <option value="altro">Altro</option>
-        </select>
-      </div>
-      <!-- Messaggio -->
-      <div>
-        <label for="message">Messaggio:</label>
-        <textarea id="message" name="message" rows="5" required ></textarea>
-      </div>
-      <!-- Accettazione termini (checkbox) -->
-      <div>
-        <input type="checkbox" id="terms" name="terms" required />
-        <label for="terms">Accetto i termini e le condizioni</label>
-      </div>
-      <!-- Invio -->
-      <div>
-        <button type="submit">Invia</button>
-      </div>
-    </form>
-  </main>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modulo di contatto</title>
+  </head>
+  <body>
+    <header>
+      <h1>Contattaci</h1>
+      <p>Compila il modulo sottostante per inviarci un messaggio.</p>
+    </header>
+    <main>
+      <form action="#" method="post">
+        <!-- Nome -->
+        <div>
+          <label for="name">Nome:</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <!-- Email -->
+        <div>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <!-- Oggetto (select) -->
+        <div>
+          <label for="subject">Oggetto:</label>
+          <select id="subject" name="subject" required>
+            <option value="" disabled selected>Seleziona un'opzione</option>
+            <option value="informazioni">Richiesta di informazioni</option>
+            <option value="supporto">Supporto tecnico</option>
+            <option value="feedback">Feedback</option>
+            <option value="altro">Altro</option>
+          </select>
+        </div>
+        <!-- Messaggio -->
+        <div>
+          <label for="message">Messaggio:</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <!-- Accettazione termini (checkbox) -->
+        <div>
+          <input type="checkbox" id="terms" name="terms" required />
+          <label for="terms">Accetto i termini e le condizioni</label>
+        </div>
+        <!-- Invio -->
+        <div>
+          <button type="submit">Invia</button>
+        </div>
+      </form>
+    </main>
+  </body>
 </html>

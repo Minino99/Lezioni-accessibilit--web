@@ -1,105 +1,109 @@
 <!DOCTYPE html>
 <html lang="it">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Slider di Immagini</title>
-  <style>
-    /* Stili di base per il carosello */
-    .slides figure {
-      display: none;
-      text-align: center;
-    }
-    .slides img {
-      max-width: 400px;
-      height: auto;
-      display: block;
-      margin: 0 auto;
-    }
-    .slides figcaption {
-      margin-top: 0.5em;
-      font-style: italic;
-    }
-    /* Nasconde i radio input */
-    input[type="radio"] {
-      display: none;
-    }
-    /* Mostra lo slide corrispondente al radio selezionato */
-    #slide1:checked ~ .slides figure:nth-child(1) {
-      display: block;
-    }
-    #slide2:checked ~ .slides figure:nth-child(2) {
-      display: block;
-    }
-    #slide3:checked ~ .slides figure:nth-child(3) {
-      display: block;
-    }
-    /* Controlli di navigazione */
-    .controls > div {
-      display: none;
-    }
-    #slide1:checked ~ .controls .controls-for-slide1 {
-      display: block;
-    }
-    #slide2:checked ~ .controls .controls-for-slide2 {
-      display: block;
-    }
-    #slide3:checked ~ .controls .controls-for-slide3 {
-      display: block;
-    }
-    .controls label {
-      cursor: pointer;
-      padding: 0.5em 1em;
-      background: #eee;
-      margin: 0 5px;
-      border-radius: 4px;
-      text-decoration: none;
-    }
-    .controls label:hover {
-      background: #ccc;
-    }
-  </style>
-</head>
-<body>
-  <main>
-    <section class="slider">
-      <h1>Slider di immagini</h1>
-      <!-- Radio per il controllo del carosello -->
-      <input type="radio" name="slides" id="slide1" checked />
-      <input type="radio" name="slides" id="slide2" />
-      <input type="radio" name="slides" id="slide3" />
-      
-      <!-- Immagini dello slider -->
-      <div class="slides">
-        <figure>
-          <img src="tramonto-spiaggia.jpg"/>
-          <figcaption>Tramonto dorato su una spiaggia deserta.</figcaption>
-        </figure>
-        <figure>
-          <img src="foresta-autunno.jpg"/>
-          <figcaption>Un sentiero attraversa una foresta dai colori autunnali.</figcaption>
-        </figure>
-        <figure>
-          <img src="citta-notte.jpeg"/>
-          <figcaption>Lo skyline della città illuminato durante le ore notturne.</figcaption>
-        </figure>
-      </div>
-      <!-- Pulsanti di navigazione Prev/Next -->
-      <div class="controls">
-        <div class="controls-for-slide1">
-          <label for="slide3" class="prev">&#9664;</label>
-          <label for="slide2" class="next">&#9654;</label>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slider di Immagini</title>
+    <style>
+      /* Stili di base per il carosello */
+      .slides figure {
+        display: none;
+        text-align: center;
+      }
+      .slides img {
+        max-width: 400px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+      }
+      .slides figcaption {
+        margin-top: 0.5em;
+        font-style: italic;
+      }
+      /* Nasconde i radio input */
+      input[type="radio"] {
+        display: none;
+      }
+      /* Mostra lo slide corrispondente al radio selezionato */
+      #slide1:checked ~ .slides figure:nth-child(1) {
+        display: block;
+      }
+      #slide2:checked ~ .slides figure:nth-child(2) {
+        display: block;
+      }
+      #slide3:checked ~ .slides figure:nth-child(3) {
+        display: block;
+      }
+      /* Controlli di navigazione */
+      .controls > div {
+        display: none;
+      }
+      #slide1:checked ~ .controls .controls-for-slide1 {
+        display: block;
+      }
+      #slide2:checked ~ .controls .controls-for-slide2 {
+        display: block;
+      }
+      #slide3:checked ~ .controls .controls-for-slide3 {
+        display: block;
+      }
+      .controls label {
+        cursor: pointer;
+        padding: 0.5em 1em;
+        background: #eee;
+        margin: 0 5px;
+        border-radius: 4px;
+        text-decoration: none;
+      }
+      .controls label:hover {
+        background: #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="slider">
+        <h1>Slider di immagini</h1>
+        <!-- Radio per il controllo del carosello -->
+        <input type="radio" name="slides" id="slide1" checked />
+        <input type="radio" name="slides" id="slide2" />
+        <input type="radio" name="slides" id="slide3" />
+
+        <!-- Immagini dello slider -->
+        <div class="slides">
+          <figure>
+            <img src="tramonto-spiaggia.jpg" />
+            <figcaption>Tramonto dorato su una spiaggia deserta.</figcaption>
+          </figure>
+          <figure>
+            <img src="foresta-autunno.jpg" />
+            <figcaption>
+              Un sentiero attraversa una foresta dai colori autunnali.
+            </figcaption>
+          </figure>
+          <figure>
+            <img src="citta-notte.jpeg" />
+            <figcaption>
+              Lo skyline della città illuminato durante le ore notturne.
+            </figcaption>
+          </figure>
         </div>
-        <div class="controls-for-slide2">
-          <label for="slide1" class="prev">&#9664;</label>
-          <label for="slide3" class="next">&#9654;</label>
+        <!-- Pulsanti di navigazione Prev/Next -->
+        <div class="controls">
+          <div class="controls-for-slide1">
+            <label for="slide3" class="prev">&#9664;</label>
+            <label for="slide2" class="next">&#9654;</label>
+          </div>
+          <div class="controls-for-slide2">
+            <label for="slide1" class="prev">&#9664;</label>
+            <label for="slide3" class="next">&#9654;</label>
+          </div>
+          <div class="controls-for-slide3">
+            <label for="slide2" class="prev">&#9664;</label>
+            <label for="slide1" class="next">&#9654;</label>
+          </div>
         </div>
-        <div class="controls-for-slide3">
-          <label for="slide2" class="prev">&#9664;</label>
-          <label for="slide1" class="next">&#9654;</label>
-        </div>
-      </div>
-    </section>
-  </main>
-</body>
+      </section>
+    </main>
+  </body>
 </html>
