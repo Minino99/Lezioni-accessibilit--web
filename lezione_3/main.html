@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Widget di Accessibilità WCAG AAA</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Esempio di Pagina</h1>
+    <nav>
+      <ul>
+        <li><a href="#mainContent">Vai al contenuto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="mainContent">
+    <p>
+      Questa è una pagina di prova per mostrare il funzionamento di un widget di accessibilità
+      conforme alle linee guida WCAG AAA, in maniera basilare. 
+    </p>
+    <img src="https://picsum.photos/300" alt="Immagine di esempio" />
+  </main>
+
+  <!-- WIDGET DI ACCESSIBILITÀ -->
+  <div class="accessibility-widget" id="accessibilityWidget" 
+       role="region" aria-label="Widget di Accessibilità">
+    
+    <!-- 
+      Utilizziamo un pulsante con aria-label e uno span .sr-only per garantire 
+      un testo alternativo chiaro ai lettori di schermo. L’emoji ♿ rimane per la resa visiva.
+    -->
+    <button 
+      class="accessibility-button" 
+      id="accessibilityBtn"
+      aria-label="Apri menu di accessibilità"
+      aria-haspopup="true"
+      aria-expanded="false"
+      aria-controls="accessibilityMenu">
+      ♿
+      <span class="sr-only">Menu di Accessibilità</span>
+    </button>
+
+    <div 
+      class="accessibility-menu" 
+      id="accessibilityMenu" 
+      role="menu" 
+      aria-hidden="true">
+      
+      <button id="increaseTextBtn" role="menuitem">
+        Aumenta Testo
+      </button>
+      <button id="stopAnimationsBtn" role="menuitem">
+        Ferma Animazioni
+      </button>
+      <button id="hideImagesBtn" role="menuitem">
+        Nascondi Immagini
+      </button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

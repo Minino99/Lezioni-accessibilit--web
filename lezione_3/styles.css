@@ -1,0 +1,138 @@
+/* RESET DI BASE (consigliato) */
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+/* Corpo documento */
+body {
+ font-family: Arial, sans-serif;
+ background-color: #FFF;
+ /* colore di sfondo chiaro */
+ color: #000;
+ /* testo nero: contrasto molto elevato (AAA) */
+ padding: 20px;
+ line-height: 1.6;
+}
+
+/* Link */
+a {
+ color: #0000EE;
+ /* Blu scuro per link: verificare contrasto AAA su sfondo #FFF */
+ text-decoration: underline;
+}
+
+/* FOCUS VISIBILE: outline ben distinto per AAA */
+:focus {
+ outline: 3px dashed #FF9900;
+ /* Esempio di outline arancione a contrasto elevato */
+ outline-offset: 2px;
+}
+
+/* .sr-only: contenuto solo per screen reader */
+.sr-only {
+ position: absolute;
+ width: 1px;
+ height: 1px;
+ padding: 0;
+ margin: -1px;
+ overflow: hidden;
+ clip: rect(0, 0, 0, 0);
+ white-space: nowrap;
+ border: 0;
+}
+
+/* ======================== */
+/* WIDGET DI ACCESSIBILITÀ  */
+/* ======================== */
+
+/* Contenitore fisso in basso a sinistra */
+.accessibility-widget {
+ position: fixed;
+ bottom: 20px;
+ left: 20px;
+ z-index: 9999;
+}
+
+/* Pulsante circolare con alto contrasto */
+.accessibility-button {
+ width: 60px;
+ height: 60px;
+ border-radius: 50%;
+ background-color: #000;
+ /* Nero */
+ color: #FFF;
+ /* Testo Bianco -> contrasto molto elevato (AAA) */
+ border: none;
+ cursor: pointer;
+ font-size: 1.5rem;
+ box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+ transition: background-color 0.3s ease;
+}
+
+.accessibility-button:hover,
+.accessibility-button:focus {
+ background-color: #333;
+ /* Grigio scuro per hover/focus */
+}
+
+/* Menu */
+.accessibility-menu {
+ margin-top: 10px;
+ background-color: #FFF;
+ /* Sfondo Bianco */
+ color: #000;
+ /* Testo Nero (AAA su bianco) */
+ border: 2px solid #000;
+ /* Bordo nero ad alto contrasto */
+ display: none;
+ /* Nascosto di default */
+ flex-direction: column;
+ padding: 10px;
+ box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+ width: 180px;
+}
+
+/* Pulsanti nel menu: sfondo nero, testo bianco */
+.accessibility-menu button {
+ width: 100%;
+ margin: 5px 0;
+ padding: 10px;
+ font-size: 1rem;
+ cursor: pointer;
+ background-color: #000;
+ color: #FFF;
+ border: 2px solid #000;
+ /* Bordo nero su sfondo nero non si vede, 
+                           ma in focus si vede l’outline. */
+ text-align: left;
+ /* allineamento testo a sinistra */
+}
+
+.accessibility-menu button:hover,
+.accessibility-menu button:focus {
+ background-color: #333;
+}
+
+/* ================================ */
+/* CLASSI DI UTILITÀ PER ACCESSIBILITÀ */
+/* ================================ */
+
+/* Aumento della dimensione del testo */
+body.large-text * {
+ font-size: 120% !important;
+}
+
+/* Ferma Animazioni */
+.stop-animations *,
+.stop-animations *::before,
+.stop-animations *::after {
+ animation: none !important;
+ transition: none !important;
+}
+
+/* Nascondi immagini */
+.hide-images img {
+ display: none !important;
+}
