@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Slider di Immagini</title>
+  <style>
+    /* Stili di base per il carosello */
+    .slides figure {
+      display: none;
+      text-align: center;
+    }
+    .slides img {
+      max-width: 400px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+    .slides figcaption {
+      margin-top: 0.5em;
+      font-style: italic;
+    }
+    /* Nasconde i radio input */
+    input[type="radio"] {
+      display: none;
+    }
+    /* Mostra lo slide corrispondente al radio selezionato */
+    #slide1:checked ~ .slides figure:nth-child(1) {
+      display: block;
+    }
+    #slide2:checked ~ .slides figure:nth-child(2) {
+      display: block;
+    }
+    #slide3:checked ~ .slides figure:nth-child(3) {
+      display: block;
+    }
+    /* Controlli di navigazione */
+    .controls > div {
+      display: none;
+    }
+    #slide1:checked ~ .controls .controls-for-slide1 {
+      display: block;
+    }
+    #slide2:checked ~ .controls .controls-for-slide2 {
+      display: block;
+    }
+    #slide3:checked ~ .controls .controls-for-slide3 {
+      display: block;
+    }
+    .controls label {
+      cursor: pointer;
+      padding: 0.5em 1em;
+      background: #eee;
+      margin: 0 5px;
+      border-radius: 4px;
+      text-decoration: none;
+    }
+    .controls label:hover {
+      background: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <!-- Aggiunto role="region" e aria-roledescription per identificare la funzione del componente -->
+    <section class="slider" role="region" aria-roledescription="carousel" aria-label="Galleria di immagini paesaggistiche">
+      <h1 id="carousel-title">Slider di immagini</h1>
+      <!-- Radio per il controllo del carosello - Aggiunti attributi aria-labelledby per collegare ogni input al titolo dello slider -->
+      <input type="radio" name="slides" id="slide1" checked aria-labelledby="carousel-title" />
+      <input type="radio" name="slides" id="slide2" aria-labelledby="carousel-title" />
+      <input type="radio" name="slides" id="slide3" aria-labelledby="carousel-title" />
+      
+      <!-- Immagini dello slider - Aggiunto role="group" e aria-roledescription per il contenitore delle slide -->
+      <div class="slides" role="group" aria-roledescription="slides">
+        <!-- Aggiunto role="group" e aria-roledescription per ciascuna slide -->
+        <figure role="group" aria-roledescription="slide" aria-label="Slide 1 di 3">
+          <!-- Aggiunto alt text descrittivo all'immagine -->
+          <img src="tramonto-spiaggia.jpg" alt="Tramonto dorato che illumina una spiaggia deserta con sabbia e onde"/>
+          <figcaption>Tramonto dorato su una spiaggia deserta.</figcaption>
+        </figure>
+        <figure role="group" aria-roledescription="slide" aria-label="Slide 2 di 3">
+          <!-- Aggiunto alt text descrittivo all'immagine -->
+          <img src="foresta-autunno.jpg" alt="Sentiero che attraversa una foresta con alberi dai colori rossi e gialli dell'autunno"/>
+          <figcaption>Un sentiero attraversa una foresta dai colori autunnali.</figcaption>
+        </figure>
+        <figure role="group" aria-roledescription="slide" aria-label="Slide 3 di 3">
+          <!-- Aggiunto alt text descrittivo all'immagine -->
+          <img src="citta-notte.jpeg" alt="Panorama notturno di una città con grattacieli illuminati e luci urbane"/>
+          <figcaption>Lo skyline della città illuminato durante le ore notturne.</figcaption>
+        </figure>
+      </div>
+      <!-- Pulsanti di navigazione Prev/Next - Aggiunto role="group" e aria-label per il gruppo di controlli -->
+      <div class="controls" role="group" aria-label="Controlli del carosello">
+        <div class="controls-for-slide1">
+          <!-- Aggiunti aria-label ai controlli per identificarne la funzione -->
+          <label for="slide3" class="prev" aria-label="Vai alla slide precedente" tabindex="0">&#9664;</label>
+          <label for="slide2" class="next" aria-label="Vai alla slide successiva" tabindex="0">&#9654;</label>
+        </div>
+        <div class="controls-for-slide2">
+          <label for="slide1" class="prev" aria-label="Vai alla slide precedente" tabindex="0">&#9664;</label>
+          <label for="slide3" class="next" aria-label="Vai alla slide successiva" tabindex="0">&#9654;</label>
+        </div>
+        <div class="controls-for-slide3">
+          <label for="slide2" class="prev" aria-label="Vai alla slide precedente" tabindex="0">&#9664;</label>
+          <label for="slide1" class="next" aria-label="Vai alla slide successiva" tabindex="0">&#9654;</label>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
